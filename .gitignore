@@ -1,0 +1,11 @@
+# Ignore Python cache
+__pycache__/
+*.pyc
+
+# Ignore heavy model files
+*.pb
+*.pth
+
+# Ignore virtual environments
+venv/
+.env

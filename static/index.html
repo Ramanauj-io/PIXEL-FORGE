@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PixelForge | Super Resolution Mapping</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo-area">
+            <div><strong>PixelForge</strong> | <span>Super Resolution Mapping</span></div>
+        </div>
+        <div class="status"><span class="status-dot"></span> System Online</div>
+    </header>
+
+    <main id="dashboard">
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="tag">AI POWERED • SATELLITE INTELLIGENCE</div>
+                <h1>Transform Medium-Resolution <span>Satellite Imagery</span> into Fine-Scale Maps</h1>
+                <p>Deep learning based Super Resolution Mapping for detailed, GIS-ready land-cover analysis.</p>
+            </div>
+        </section>
+
+        <!-- UPLOAD SECTION -->
+        <section id="upload-section" class="section">
+            <div class="section-title">
+                <h2>01. Satellite Image Input</h2>
+            </div>
+            <div class="upload-layout">
+                <div class="upload-box" id="dropZone">
+                    <h3>Upload Satellite Image</h3>
+                    <input type="file" id="imageInput" accept="image/*" hidden />
+                    <button class="outline-btn" onclick="document.getElementById('imageInput').click()">Choose File</button>
+                    <div id="fileName" style="margin-top: 10px; color: #a1a1aa;">Supported: JPG, PNG</div>
+                </div>
+                <div class="settings-box">
+                    <h3>Processing Configuration</h3>
+                    <label>Sensor</label>
+                    <select id="sensor">
+                        <option>Sentinel-2</option>
+                        <option>Landsat</option>
+                    </select>
+                    <button class="process-btn" onclick="startProcessing()">Start Super Resolution →</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROCESSING SECTION -->
+        <section id="processing" class="section hidden">
+            <div class="processing-card">
+                <h2>Processing Satellite Imagery...</h2>
+                <div class="progress">
+                    <div id="progressBar"></div>
+                </div>
+                <strong id="progressValue">0%</strong>
+            </div>
+        </section>
+
+        <!-- MAP SECTION -->
+        <section id="map-section" class="section hidden">
+            <div class="section-title">
+                <h2>02. Super Resolution Map Results</h2>
+            </div>
+            <div class="comparison-container">
+                <div class="map-box">
+                    <h3>Before (Medium Res)</h3>
+                    <img id="beforeImage" src="" alt="Before" />
+                </div>
+                <div class="map-box">
+                    <h3>After (Super Res)</h3>
+                    <img id="afterImage" src="" alt="After" />
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
